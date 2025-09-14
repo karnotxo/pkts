@@ -76,7 +76,7 @@ public class Pcap {
 
         Packet packet = null;
         boolean processNext = true;
-        while ((packet = framer.frame(null, this.buffer)) != null && processNext) {
+        while (processNext && (packet = framer.frame(null, this.buffer)) != null) {
             try {
                 // System.out.println(" - " + (count++));
                 final long time = packet.getArrivalTime();
